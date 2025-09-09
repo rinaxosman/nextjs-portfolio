@@ -8,27 +8,13 @@ import BlogPreview from "@/components/BlogPreview";
 import Contact from "@/components/Contact";
 import TemplateCTA from "@/components/TemplateCTA";
 import Footer from "@/components/Footer";
-import ScrollTimeline from "@/components/ScrollTimeline";
-
-const SECTIONS = [
-  { id: "home",     label: "Home" },
-  { id: "about",    label: "About" },
-  { id: "projects", label: "Projects" },
-  { id: "resume",   label: "Resume" },
-  { id: "blog",     label: "Research" },
-  { id: "template", label: "Template" },
-  { id: "contact",  label: "Contact" },
-];
 
 export default function Page() {
   return (
     <main className="min-h-screen bg-neutral-950 text-neutral-100">
       <Header />
-      {/* timeline on the left (hidden on mobile) */}
-      <ScrollTimeline sections={SECTIONS} />
-
       <Hero />
-      <Section id="about" title="About me" subtitle="CS @ uOttawa • Software • Data • Cybersecurity">
+      <Section id="about" title="About me" subtitle="CS @ uOttawa • Cyber • Data • Builder">
         <About />
       </Section>
       <Section id="projects" title="Projects" subtitle="Selected work I’m proud of.">

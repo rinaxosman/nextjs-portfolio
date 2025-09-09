@@ -5,6 +5,20 @@
   --foreground: #171717;
 }
 
+html {
+  scroll-behavior: smooth;
+  /* scroll-padding-top: 10px; */
+}
+
+/* 3-line clamp without Tailwind plugin */
+.clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
