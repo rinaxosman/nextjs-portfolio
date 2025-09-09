@@ -28,7 +28,7 @@ export default function Page() {
       <ScrollTimeline sections={SECTIONS} />
 
       <Hero />
-      <Section id="about" title="About me" subtitle="CS @ uOttawa • Software • Data • Cybersecurity">
+      <Section id="about" title="About me" subtitle="CS graduate @ uOttawa • Software • Data • Cybersecurity">
         <About />
       </Section>
       <Section id="projects" title="Projects" subtitle="Selected work I’m proud of.">

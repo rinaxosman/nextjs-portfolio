@@ -7,7 +7,7 @@ import { useState } from "react";
 export default function Contact() {
   // strip any "mailto:" if you added it in LINKS
   const email = (LINKS.email || "").replace(/^mailto:/, "");
-  const mailHref = `mailto:${email}`;
+  // const mailHref = `mailto:${email}`;
 
   const [copied, setCopied] = useState(false);
 

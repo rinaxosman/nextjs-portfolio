@@ -73,11 +73,9 @@ export function Hero() {
             <p className="text-neutral-400 text-xs tracking-wide">BSc Computer Science</p>
 
             {/* Socials */}
-            {/* Socials */}
             <div
               className="flex gap-4 mt-4 text-neutral-300"
-              style={{ ["--accent" as any]: ACCENT }} // provide --accent for children
-            >
+              style={{ ["--accent" as any]: ACCENT }} >
               {/* LinkedIn (brand blue -> white on hover) */}
               <a
                 href={LINKS.linkedin}
