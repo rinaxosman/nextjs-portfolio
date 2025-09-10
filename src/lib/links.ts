@@ -4,5 +4,5 @@ export const LINKS = {
   github: "https://github.com/rinaxosman", // change to your github profile
   resume: "/Rina-Osman-Resume.pdf", // PDF in /public
   substackRSS: "https://substack.com/@rinax", // modify or remove
-  repo: "https://github.com/your-username/your-portfolio-repo",
+  repo: "https://github.com/rinaxosman/nextjs-portfolio",
 };
