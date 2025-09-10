@@ -5,6 +5,12 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Github, Linkedin, Mail, Copy, ExternalLink } from "lucide-react";
 import { ACCENT } from "@/lib/constants";
 import { LINKS } from "@/lib/links";
+import type { CSSProperties } from "react";
+
+const accentStyle: CSSProperties & Record<"--accent", string> = {
+  "--accent": ACCENT,
+};
+
 
 export function Hero() {
   // normalize email + mailto
@@ -73,9 +79,7 @@ export function Hero() {
             <p className="text-neutral-400 text-xs tracking-wide">BSc Computer Science</p>
 
             {/* Socials */}
-            <div
-              className="flex gap-4 mt-4 text-neutral-300"
-              style={{ ["--accent" as any]: ACCENT }} >
+            <div className="flex gap-4 mt-4 text-neutral-300" style={accentStyle}>
               {/* LinkedIn (brand blue -> white on hover) */}
               <a
                 href={LINKS.linkedin}
