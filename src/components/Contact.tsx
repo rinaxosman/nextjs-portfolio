@@ -41,7 +41,8 @@ export default function Contact() {
 
           <button
             onClick={copyEmail}
-            className="ml-auto shrink-0 rounded-full border border-white/15 px-3 py-1 text-sm hover:bg-white/5"
+            title="Copy to clipboard"
+            className="ml-auto shrink-0 rounded-full border border-white/15 px-3 py-1 text-sm hover:bg-white/5 cursor-pointer active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
             aria-label="Copy email to clipboard"
           >
             {copied ? "Copied" : "Copy"}
@@ -63,11 +64,11 @@ export default function Contact() {
         href={LINKS.linkedin}
         target="_blank"
         rel="noopener noreferrer"
-        className="group flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-4"
+        className="group flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 hover:bg-white/10"
         aria-label="LinkedIn"
       >
-        <Linkedin className="text-[#0A66C2] transition-colors duration-200 group-hover:text-white" />
-        <span className="transition-colors group-hover:text-[#0A66C2]">LinkedIn</span>
+        <Linkedin className="text-[#0A66C2] transition-colors duration-200 " />
+        <span className="transition-colors">LinkedIn</span>
       </a>
 
       {/* GitHub */}
