@@ -55,7 +55,7 @@ export function Resume() {
           left="2021 – 2025"
           title="B.Sc. Computer Science (Honours)"
           org="University of Ottawa"
-          body="Management & Entrepreneurship option. Projects across data, AI, and full-stack development."
+          body="Management & Entrepreneurship option. Projects across data, AI, and full-stack development. Active in student clubs and hackathons."
         />
       </div>
 
@@ -64,18 +64,17 @@ export function Resume() {
           <div className="font-semibold mb-3">Professional skillset</div>
           <ul className="grid sm:grid-cols-2 gap-y-2 text-sm text-neutral-300">
             <li>Software Development</li>
-            <li>Data Engineering</li>
+            <li>Data Analysis</li>
             <li>Cloud & Automation</li>
-            <li>Product Thinking</li>
+            <li>UX/UI Design</li>
           </ul>
         </div>
         <div className="rounded-2xl border border-white/10 p-5">
           <div className="font-semibold mb-3">Languages</div>
           <ul className="grid sm:grid-cols-2 gap-y-2 text-sm text-neutral-300">
-            <li>Python · Java · TypeScript</li>
-            <li>SQL</li>
             <li>English (native)</li>
-            <li>French (proficient) · Arabic (conversational)</li>
+            <li>French (proficient)</li>
+            <li>Arabic (conversational)</li>
           </ul>
         </div>
       </div>
