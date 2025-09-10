@@ -57,7 +57,8 @@ export function Hero() {
 
   return (
     <section id="home" className="relative overflow-hidden">
-      <div className="mx-auto max-w-6xl px-4 py-20 md:py-28">
+      <div className="mx-auto w-full max-w-[1130px] px-6 sm:px-8 lg:px-10 xl:px-6 py-20 md:py-28">
+
         <div className="grid md:grid-cols-2 items-center gap-y-10 sm:gap-y-12 md:gap-y-0">
           {/* Left: Photo + Name */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
