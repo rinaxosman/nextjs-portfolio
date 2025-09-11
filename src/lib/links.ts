@@ -5,4 +5,5 @@ export const LINKS = {
   resume: "/Rina-Osman-Resume.pdf", // PDF in /public
   substackRSS: "https://substack.com/@rinax", // modify or remove
   repo: "https://github.com/rinaxosman/nextjs-portfolio",
+  honoursReport: "/CSI4900-VulRepair.pdf"
 };

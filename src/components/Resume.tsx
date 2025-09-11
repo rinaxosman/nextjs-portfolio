@@ -4,6 +4,7 @@ import { LINKS } from "@/lib/links";
 export function Resume() {
   return (
     <div className="space-y-10">
+      {/* Experience header */}
       <div className="flex items-center justify-between">
         <h3 className="text-xl font-semibold">Experience</h3>
         <a
@@ -14,6 +15,7 @@ export function Resume() {
         </a>
       </div>
 
+      {/* Experience list */}
       <div className="grid gap-6">
         {/* Grouped: Software Developer x2 */}
         <ResumeItem
@@ -45,20 +47,32 @@ export function Resume() {
           body="Refined the organization’s plan and budget and presented recommendations as part of a consulting engagement."
         />
 
-        <div className="flex items-center justify-between">
-        <h3 className="text-xl font-semibold">Education</h3>
+        {/* Education header */}
+        <div className="flex items-center justify-between pt-2">
+          <h3 className="text-xl font-semibold">Education</h3>
+        </div>
 
-      </div>
-
-        {/* Education */}
+        {/* Degree */}
         <ResumeItem
           left="2021 – 2025"
           title="B.Sc. Computer Science (Honours)"
           org="University of Ottawa"
           body="Management & Entrepreneurship option. Projects across data, AI, and full-stack development. Active in student clubs and hackathons."
         />
+
+        {/* Honours project highlight */}
+        <ResumeItemWithAction
+          left="2025"
+          title="Honours Project (Capstone)"
+          org="Revisiting VulRepair"
+          body="Reproduced and evaluated VulRepair, a T5/CodeT5-based neural vulnerability-repair model. Implemented 10 variants, ran ablations on pre-training and BPE tokenization, and re-evaluated on a deduplicated CVEFixes split; best model reached ~46% perfect repairs."
+          ctaHref={LINKS.honoursReport || "/CSI4900-VulRepair.pdf"}
+          ctaLabel="View final report (PDF)"
+        />
+
       </div>
 
+      {/* Skills / Languages */}
       <div className="grid md:grid-cols-2 gap-6">
         <div className="rounded-2xl border border-white/10 p-5">
           <div className="font-semibold mb-3">Professional skillset</div>
@@ -99,6 +113,44 @@ function ResumeItem({
       <div>
         <div className="text-lg font-semibold">
           {title} <span className="text-neutral-400 font-normal">· {org}</span>
+        </div>
+        <p className="mt-2 text-sm text-neutral-300">{body}</p>
+      </div>
+    </div>
+  );
+}
+
+function ResumeItemWithAction({
+  left,
+  title,
+  org,
+  body,
+  ctaHref,
+  ctaLabel,
+}: {
+  left: string;
+  title: string;
+  org: string;
+  body: string;
+  ctaHref: string;
+  ctaLabel: string;
+}) {
+  return (
+    <div className="grid grid-cols-[160px,1fr] gap-6 rounded-2xl border border-white/10 bg-white/[0.04] p-5">
+      <div className="text-sm text-neutral-400">{left}</div>
+      <div>
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div className="text-lg font-semibold">
+            {title} <span className="text-neutral-400 font-normal">· {org}</span>
+          </div>
+          <a
+            href={ctaHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border border-white/15 px-3 py-1.5 text-sm hover:bg-white/5"
+          >
+            <FileText size={16} /> {ctaLabel}
+          </a>
         </div>
         <p className="mt-2 text-sm text-neutral-300">{body}</p>
       </div>
