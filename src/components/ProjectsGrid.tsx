@@ -35,10 +35,8 @@ function IconForNotebook({ title }: { title: string }) {
     );
   }
 
-  // fallback (subtle square)
-  return (
-    <div className={`${box} bg-white/5`} />
-  );
+  // fallback
+  return <div className={`${box} bg-white/5`} />;
 }
 
 export default function ProjectsGrid() {
@@ -103,17 +101,23 @@ export default function ProjectsGrid() {
         ))}
       </div>
 
-      {/* Kaggle notebooks (3-up) */}
+      {/* Data science notebooks (3-up) */}
       <div className="pt-2">
-        <div className="mb-3 flex items-center justify-between">
-          <h4 className="text-sm font-semibold text-neutral-300">
-            Kaggle notebooks
-          </h4>
+        <div className="mb-4 flex items-start justify-between gap-4">
+          <div>
+            <h4 className="text font-semibold text-neutral-300">
+              Data science notebooks
+            </h4>
+            <p className="mt-1 max-w-2xl text-sm text-neutral-400">
+              Short EDA and small studies on public datasets—feature checks,
+              visuals, and quick insights. Full archive on Kaggle.
+            </p>
+          </div>
           <a
             href="https://www.kaggle.com/rinaosman/code"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm text-neutral-300 hover:opacity-90"
+            className="inline-flex items-center gap-2 text-sm text-neutral-300 hover:opacity-90 whitespace-nowrap"
           >
             See all <ExternalLink size={14} />
           </a>
