@@ -3,7 +3,7 @@ export const LINKS = {
   linkedin: "https://www.linkedin.com/in/rina-osman/", // change to your linkedin profile!
   github: "https://github.com/rinaxosman", // change to your github profile
   resume: "/Rina-Osman-Resume.pdf", // PDF in /public
-  substackRSS: "https://substack.com/@rinax", // modify or remove
+  substack: "https://rinaosman.substack.com/feed", // modify or remove
   repo: "https://github.com/rinaxosman/nextjs-portfolio",
   honoursReport: "/CSI4900-VulRepair.pdf"
 };

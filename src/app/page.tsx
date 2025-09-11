@@ -40,7 +40,7 @@ export default function Page() {
         <Section id="resume" title="Resume" subtitle="Quick view + full PDF download.">
           <Resume />
         </Section>
-        <Section id="blog" title="Research & writing" subtitle="From Substack/Medium or a future MDX blog.">
+        <Section id="blog" title="Research & writing" subtitle="I enjoy research and writing about what I learn—more to come. Topics aren’t limited to tech.">
           <BlogPreview />
         </Section>
         <Section id="template" title="Template & stack" subtitle="Grab the code and see how it’s built.">

@@ -11,6 +11,7 @@ export default function Header() {
   const items: [string, string][] = [
     ["About", "#about"],
     ["Projects", "#projects"],
+    ["Research", "#blog"],
     ["Resume", "#resume"],
     ["Contact", "#contact"],
   ];
