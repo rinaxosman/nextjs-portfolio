@@ -31,7 +31,7 @@ export default function TemplateCTA() {
 
       {/* Tech stack overview */}
       <div className="rounded-2xl border border-white/10 bg-white/5 p-6 md:p-7">
-        <div className="text-sm text-neutral-300 mb-4">This site’s stack</div>
+        <div className="text text-neutral-300 mb-4">This site’s stack</div>
         <ul className="space-y-2 text-sm">
           <StackItem>Next.js (App Router) + React 18</StackItem>
           <StackItem>TypeScript</StackItem>
