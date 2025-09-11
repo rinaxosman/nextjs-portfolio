@@ -25,10 +25,13 @@ export default function Page() {
     <main className="min-h-screen bg-neutral-950 text-neutral-100">
       <Header />
 
+      {/* ← render the timeline */}
+      <ScrollTimeline sections={SECTIONS} />
+
       {/* Gutter wrapper */}
       <div className="mx-auto w-full max-w-6xl px-4 bp1130:px-0">
         <Hero />
-        <Section id="about" title="About me" subtitle="CS @ uOttawa • Cyber • Data • Builder">
+        <Section id="about" title="About me" subtitle="CS @ uOttawa • Software • Cyber • Data">
           <About />
         </Section>
         <Section id="projects" title="Projects" subtitle="Selected work I’m proud of.">

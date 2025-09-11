@@ -19,7 +19,6 @@ export default function About() {
         </p>
 
         {/* Grouped skill buckets */}
-        {/* Grouped skill buckets */}
         <div className="grid sm:grid-cols-2 gap-4">
           <SkillGroup
             title="Frontend"
