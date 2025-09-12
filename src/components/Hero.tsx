@@ -190,7 +190,7 @@ export function Hero() {
           <div className="mt-8 sm:mt-10 md:mt-0">
             <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight">Hello,</h1>
             <p className="mt-8 max-w-xl text-neutral-300">
-              I turn fuzzy ideas into shipped products—web apps, data pipelines, and cybersecurity tooling.
+              I turn fuzzy ideas into shipped products.
             </p>
             <p className="mt-8 max-w-xl text-neutral-300">
               I care about clean systems, clear UX, and measurable impact.
