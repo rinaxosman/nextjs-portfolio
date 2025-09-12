@@ -106,11 +106,10 @@ export default function ProjectsGrid() {
         <div className="mb-4 flex items-start justify-between gap-4">
           <div>
             <h4 className="text font-semibold text-neutral-300">
-              Data science notebooks
+              Data science & ML Work
             </h4>
             <p className="mt-1 max-w-2xl text-sm text-neutral-400">
-              Short EDA and small studies on public datasets—feature checks,
-              visuals, and quick insights. Full archive on Kaggle.
+              End-to-end data and ML work across EDA/visualization, data wrangling, predictive modeling (classification/regression), unsupervised segmentation, and heuristic search. Full write-ups on Kaggle.
             </p>
           </div>
           <a
