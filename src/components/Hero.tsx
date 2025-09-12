@@ -14,7 +14,7 @@ const accentStyle: CSSProperties & Record<"--accent", string> = {
 
 export function Hero() {
   // normalize email + mailto
-  const email = (LINKS.email || "").replace(/^mailto:/, "");
+  const email = (LINKS.emailto || "").replace(/^mailto:/, "");
   const mailHref = `mailto:${email}`;
 
   // popover state

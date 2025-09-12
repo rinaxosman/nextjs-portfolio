@@ -3,9 +3,10 @@
 import { Github, Linkedin, Mail } from "lucide-react";
 import { LINKS } from "@/lib/links";
 import { useState } from "react";
+import ContactForm from "@/components/ContactForm";
 
 export default function Contact() {
-  const email = (LINKS.email || "").replace(/^mailto:/, "");
+  const email = (LINKS.emailto || "").replace(/^mailto:/, "");
   const [copied, setCopied] = useState(false);
 
   const copyEmail = async () => {
@@ -82,6 +83,11 @@ export default function Contact() {
         <Github className="transition-colors duration-200 group-hover:text-white" />
         <span>GitHub</span>
       </a>
+      <div className="space-y-4">
+      {/* your existing email / LinkedIn / GitHub cards */}
+      <ContactForm />
     </div>
+    </div>
+    
   );
 }
