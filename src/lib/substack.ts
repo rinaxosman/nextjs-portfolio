@@ -1,5 +1,5 @@
 // lib/substack.ts
-import Parser from "rss-parser";
+import Parser, { Output } from "rss-parser";
 
 export type SubstackPost = {
   title?: string;
@@ -10,7 +10,18 @@ export type SubstackPost = {
   readingMins?: number;
 };
 
-const parser = new Parser({
+// Shape of the RSS items we read from Substack
+type SubstackRssItem = {
+  title?: string;
+  link?: string;
+  contentEncoded?: string; // from customFields mapping
+  content?: string;
+  contentSnippet?: string;
+  isoDate?: string;
+};
+
+// Tell Parser what an item looks like so we don’t use `any`
+const parser = new Parser<unknown, SubstackRssItem>({
   // Substack includes full HTML in content:encoded
   customFields: { item: [["content:encoded", "contentEncoded"]] },
   // A browser-y UA helps avoid occasional empty responses
@@ -24,18 +35,25 @@ const parser = new Parser({
 });
 
 // Accepts: "rinax", "https://rinax.substack.com", "https://substack.com/@rinax/posts"
-export async function getSubstackPosts(handleOrUrl: string, limit = 3): Promise<SubstackPost[]> {
+export async function getSubstackPosts(
+  handleOrUrl: string,
+  limit = 3
+): Promise<SubstackPost[]> {
   const candidates = deriveFeedCandidates(handleOrUrl);
 
   for (const feedUrl of candidates) {
     try {
-      const feed = await parser.parseURL(feedUrl);
+      const feed: Output<SubstackRssItem> = await parser.parseURL(feedUrl);
       if (feed?.items?.length) {
-        return feed.items.slice(0, limit).map((i: any) => {
+        return feed.items.slice(0, limit).map((i: SubstackRssItem) => {
           const html = i.contentEncoded ?? i.content ?? "";
           const text = stripHtml(html);
-          const image = html.match(/<img[^>]+src="([^">]+)"/i)?.[1] ?? undefined;
-          const readingMins = Math.max(1, Math.round(text.split(/\s+/).length / 220));
+          const image =
+            html.match(/<img[^>]+src="([^">]+)"/i)?.[1] ?? undefined;
+          const readingMins = Math.max(
+            1,
+            Math.round(text.split(/\s+/).length / 220)
+          );
 
           return {
             title: i.title ?? "",
