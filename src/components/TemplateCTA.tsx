@@ -20,6 +20,11 @@ export default function TemplateCTA() {
   const preview = STACK.slice(0, 3);
   const remaining = Math.max(0, STACK.length - preview.length);
 
+  // Type-safe docs link (no `any`, no extra prop required)
+  const docsHref = LINKS.repo.includes("github.com")
+    ? `${LINKS.repo}#readme`
+    : LINKS.repo;
+
   return (
     <div className="grid md:grid-cols-[1.1fr,0.9fr] gap-6">
       {/* CTA card */}
@@ -38,7 +43,7 @@ export default function TemplateCTA() {
             <Github size={18} /> View repo
           </a>
           <a
-            href={(LINKS as any).readme || LINKS.repo}
+            href={docsHref}
             className="inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2 hover:bg-white/5"
           >
             Docs <ExternalLink size={16} />
@@ -51,17 +56,16 @@ export default function TemplateCTA() {
         <div
           role="button"
           tabIndex={0}
-          onClick={() => setOpen(v => !v)}
+          onClick={() => setOpen((v) => !v)}
           onKeyDown={(e) => {
             if (e.key === "Enter" || e.key === " ") {
               e.preventDefault();
-              setOpen(v => !v);
+              setOpen((v) => !v);
             }
           }}
           aria-expanded={open}
           aria-controls="stack-chips"
-          className="w-full p-6 md:p-7 text-left flex items-start justify-between gap-4
-               select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
+          className="w-full p-6 md:p-7 text-left flex items-start justify-between gap-4 select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
         >
           <div className="min-w-0">
             <div className="font-medium text-neutral-200">This site’s stack</div>
@@ -69,9 +73,9 @@ export default function TemplateCTA() {
             {/* Only the chips container height animates */}
             <div
               id="stack-chips"
-              className={`mt-2 overflow-hidden transition-[max-height] duration-500
-                    ease-[cubic-bezier(0.22,1,0.36,1)]
-                    ${open ? "max-h-48 md:max-h-64" : "max-h-8"}`}
+              className={`mt-2 overflow-hidden transition-[max-height] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                open ? "max-h-48 md:max-h-64" : "max-h-8"
+              }`}
             >
               <div className="flex flex-wrap gap-2">
                 {(open ? STACK : preview).map((t) => (
@@ -92,10 +96,7 @@ export default function TemplateCTA() {
                         setOpen(true);
                       }
                     }}
-                    className="inline-flex items-center gap-1 rounded-full border border-white/15
-                         bg-white/5 px-3 py-1 text-xs text-neutral-300
-                         hover:bg-white/10 hover:text-white cursor-pointer
-                         focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+                    className="inline-flex items-center gap-1 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs text-neutral-300 hover:bg-white/10 hover:text-white cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
                     aria-label={`Show ${remaining} more stack items`}
                     title="Show full stack"
                   >
@@ -108,14 +109,17 @@ export default function TemplateCTA() {
           </div>
 
           <div className="shrink-0 flex items-center gap-2 text-sm text-neutral-300">
-            <span className="hidden sm:inline">{open ? "Hide stack" : "Show stack"}</span>
+            <span className="hidden sm:inline">
+              {open ? "Hide stack" : "Show stack"}
+            </span>
             <ChevronDown
-              className={`h-5 w-5 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+              className={`h-5 w-5 transition-transform duration-300 ${
+                open ? "rotate-180" : ""
+              }`}
             />
           </div>
         </div>
       </div>
-
     </div>
   );
 }
