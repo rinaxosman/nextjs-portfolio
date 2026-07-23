@@ -26,38 +26,29 @@ export default function Contact() {
   };
 
   return (
-    // 1 col by default, 2 cols ≥768px, 3 cols ≥1280px
     <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-      {/* Email card */}
+      {/* Email */}
       <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
         <div className="flex items-center gap-3">
           <Mail className="shrink-0" />
-          {/* min-w-0 + truncate prevents wrapping */}
+
           <div className="min-w-0">
             <div className="text-sm text-neutral-400">Email</div>
-            <div className="font-medium truncate" title={email}>
+            <div className="truncate font-medium" title={email}>
               {email}
             </div>
           </div>
 
           <button
+            type="button"
             onClick={copyEmail}
             title="Copy to clipboard"
-            className="ml-auto shrink-0 rounded-full border border-white/15 px-3 py-1 text-sm hover:bg-white/5 cursor-pointer active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
+            className="ml-auto shrink-0 cursor-pointer rounded-full border border-white/15 px-3 py-1 text-sm hover:bg-white/5 active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
             aria-label="Copy email to clipboard"
           >
             {copied ? "Copied" : "Copy"}
           </button>
         </div>
-
-        {/* If you want a compose button only on small screens, uncomment:
-        <a
-          href={`mailto:${email}`}
-          className="mt-3 inline-flex items-center gap-2 rounded-full border border-white/15 px-3 py-1 text-sm hover:bg-white/5 md:hidden"
-        >
-          Compose <Mail className="h-4 w-4" />
-        </a>
-        */}
       </div>
 
       {/* LinkedIn */}
@@ -68,7 +59,7 @@ export default function Contact() {
         className="group flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 hover:bg-white/10"
         aria-label="LinkedIn"
       >
-        <Linkedin className="text-[#0A66C2] transition-colors duration-200 " />
+        <Linkedin className="text-[#0A66C2] transition-colors duration-200" />
         <span className="transition-colors">LinkedIn</span>
       </a>
 
@@ -83,11 +74,11 @@ export default function Contact() {
         <Github className="transition-colors duration-200 group-hover:text-white" />
         <span>GitHub</span>
       </a>
-      <div className="space-y-4">
-      {/* your existing email / LinkedIn / GitHub cards */}
-      <ContactForm />
+
+      {/* Contact form */}
+      <div className="md:col-span-2 xl:col-span-3">
+        <ContactForm />
+      </div>
     </div>
-    </div>
-    
   );
 }
