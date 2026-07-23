@@ -9,33 +9,33 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
   {
-    title: "AI Video Compressor (MVP)",
+    title: "TrendMine",
+    role: "Full-Stack Developer",
+    description:
+      "AI-powered platform that turns trending topics into startup and side-hustle ideas.",
+    tech: ["Next.js", "TypeScript", "Tailwind", "AI"],
+    href: "https://trendmine.vercel.app/",
+    image:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
+  },
+  {
+    title: "AI Video Compressor",
     role: "Founder & Engineer",
     description:
-      "Web app that compresses MP4s to Discord-friendly 10MB. Free tier (2x/month) + paid plan.",
+      "Web app that compresses MP4 videos to Discord-friendly file sizes.",
     tech: ["Next.js", "FFmpeg.wasm", "Stripe"],
     href: "#",
     image:
-      "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=1200&auto=format&fit=crop",
   },
   {
-    title: "GeekWeek Site (uOttawa)",
-    role: "Front-End Lead",
+    title: "AI Study Assistant",
+    role: "Hackathon Developer",
     description:
-      "Public-facing event website built across multiple editions, end-to-end from design to deploy.",
-    tech: ["Next.js", "Tailwind", "Vercel"],
+      "AI study tool that organizes course information and identifies assignment deadlines.",
+    tech: ["Python", "React", "AI"],
     href: "#",
     image:
-      "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1200&auto=format&fit=crop",
-  },
-  {
-    title: "Penguin: Spark → Iceberg Ingestion",
-    role: "Data Engineer (Intern)",
-    description:
-      "Generic SparkDataFrameWriter (JSON→Iceberg) with table maintenance procedures.",
-    tech: ["Spark", "Java", "Iceberg"],
-    href: "#",
-    image:
-      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=1200&auto=format&fit=crop",
   },
 ];
