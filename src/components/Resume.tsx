@@ -1,94 +1,100 @@
-import { FileText } from "lucide-react";
+import {
+  BarChart3,
+  Code2,
+  FileText,
+  GraduationCap,
+  HandHeart,
+  Smartphone,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { LINKS } from "@/lib/links";
 
 export function Resume() {
   return (
     <div className="space-y-10">
-      {/* Experience header */}
       <div className="flex items-center justify-between">
         <h3 className="text-xl font-semibold">Experience</h3>
         <a
           href={LINKS.resume}
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center gap-2 rounded-full border border-white/15 px-3 py-1.5 hover:bg-white/5"
         >
           <FileText size={16} /> Download CV
         </a>
       </div>
 
-      {/* Experience list */}
       <div className="grid gap-6">
-        {/* Grouped: Software Developer x2 */}
         <ResumeItem
+          icon={Code2}
+          left="Jan 2026 – Present"
+          title="Full-Time Software Developer"
+          org="Government of Canada"
+          body="Develop secure web applications using React, TypeScript, Python, FastAPI, and SQL. Build frontend components, backend APIs, and database-integrated features."
+        />
+
+        <ResumeItem
+          icon={Code2}
           left="Sept 2024 – Apr 2025"
-          title="Software Developer (x2 Internships)"
-          org="Communications Security Establishment"
-          body="Two rotations contributing to internal services and data tooling. Helped modernize Python/JVM backends, improve cloud automation, and support secure service integrations."
+          title="Software Developer (2 Internships)"
+          org="Government of Canada"
+          body="Supported backend applications, cloud environments, and data-processing tools. Modernized legacy functionality using Python and Java."
         />
 
-        {/* Grouped: Business Analyst x3 (2 with Web Dev) */}
         <ResumeItem
+          icon={BarChart3}
           left="May 2023 – Aug 2024"
-          title="Business Analyst (x3 Internships)"
-          org="Communications Security Establishment"
-          body="Three terms across analysis, reporting, and internal web tools. Built clear dashboards and documentation; in two rotations, contributed front-end updates and static-site content for internal portals."
+          title="Business Analyst (3 Internships)"
+          org="Government of Canada"
+          body="Supported internal web projects, data analysis, reporting, dashboards, documentation, and communications."
         />
 
-        {/* Individual roles */}
         <ResumeItem
+          icon={Smartphone}
           left="Nov 2023 – Mar 2024"
-          title="Application Developer (Intern)"
+          title="Application Developer Intern"
           org="AINA Software"
-          body="Prototyped a mobile app; collaborated on UI in Figma and implemented front-end features and tests."
+          body="Created mobile app prototypes and UX/UI designs in Figma while supporting frontend development and testing."
         />
+
         <ResumeItem
+          icon={HandHeart}
           left="May 2023 – Aug 2023"
           title="Volunteer Project Consultant"
           org="Dimension Sportive et Culturelle"
-          body="Refined the organization’s plan and budget and presented recommendations as part of a consulting engagement."
+          body="Improved the organization’s business plan, website strategy, budgeting, and financial planning."
         />
 
-        {/* Education header */}
         <div className="flex items-center justify-between pt-2">
           <h3 className="text-xl font-semibold">Education</h3>
         </div>
 
-        {/* Degree */}
         <ResumeItem
-          left="2021 – 2025"
-          title="B.Sc. Computer Science (Honours)"
+          icon={GraduationCap}
+          left="Sept 2021 – Apr 2025"
+          title="Honours BSc in Computer Science"
           org="University of Ottawa"
-          body="Management & Entrepreneurship option. Projects across data, AI, and full-stack development. Active in student clubs and hackathons."
+          body="Management and Entrepreneurship option. Ideas Lab winner and participant in Hack the Hill, uOttaHack, and Hack the Future 2026."
         />
-
-        {/* Honours project highlight */}
-        <ResumeItemWithAction
-          left="2025"
-          title="Honours Project (Capstone)"
-          org="Revisiting VulRepair"
-          body="Reproduced and evaluated VulRepair, a T5/CodeT5-based neural vulnerability-repair model. Implemented 10 variants, ran ablations on pre-training and BPE tokenization, and re-evaluated on a deduplicated CVEFixes split; best model reached ~46% perfect repairs."
-          ctaHref={LINKS.honoursReport || "/CSI4900-VulRepair.pdf"}
-          ctaLabel="View final report (PDF)"
-        />
-
       </div>
 
-      {/* Skills / Languages */}
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid gap-6 md:grid-cols-2">
         <div className="rounded-2xl border border-white/10 p-5">
-          <div className="font-semibold mb-3">Professional skillset</div>
-          <ul className="grid sm:grid-cols-2 gap-y-2 text-sm text-neutral-300">
-            <li>Software Development</li>
-            <li>Data Analysis</li>
-            <li>Cloud & Automation</li>
-            <li>UX/UI Design</li>
+          <div className="mb-3 font-semibold">Technical skills</div>
+          <ul className="grid gap-y-2 text-sm text-neutral-300 sm:grid-cols-2">
+            <li>React & TypeScript</li>
+            <li>Python & FastAPI</li>
+            <li>Java & SQL</li>
+            <li>Git & Docker</li>
           </ul>
         </div>
+
         <div className="rounded-2xl border border-white/10 p-5">
-          <div className="font-semibold mb-3">Languages</div>
-          <ul className="grid sm:grid-cols-2 gap-y-2 text-sm text-neutral-300">
-            <li>English (native)</li>
-            <li>French (proficient)</li>
-            <li>Arabic (conversational)</li>
+          <div className="mb-3 font-semibold">Languages</div>
+          <ul className="grid gap-y-2 text-sm text-neutral-300 sm:grid-cols-2">
+            <li>English</li>
+            <li>French</li>
+            <li>Arabic</li>
           </ul>
         </div>
       </div>
@@ -97,61 +103,32 @@ export function Resume() {
 }
 
 function ResumeItem({
+  icon: Icon,
   left,
   title,
   org,
   body,
 }: {
+  icon: LucideIcon;
   left: string;
   title: string;
   org: string;
   body: string;
 }) {
   return (
-    <div className="grid grid-cols-[160px,1fr] gap-6 rounded-2xl border border-white/10 bg-white/[0.04] p-5">
+    <div className="grid gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-5 md:grid-cols-[48px_160px_1fr] md:gap-6">
+      <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5">
+        <Icon size={21} className="text-violet-400" />
+      </div>
+
       <div className="text-sm text-neutral-400">{left}</div>
+
       <div>
         <div className="text-lg font-semibold">
-          {title} <span className="text-neutral-400 font-normal">· {org}</span>
+          {title}{" "}
+          <span className="font-normal text-neutral-400">· {org}</span>
         </div>
-        <p className="mt-2 text-sm text-neutral-300">{body}</p>
-      </div>
-    </div>
-  );
-}
 
-function ResumeItemWithAction({
-  left,
-  title,
-  org,
-  body,
-  ctaHref,
-  ctaLabel,
-}: {
-  left: string;
-  title: string;
-  org: string;
-  body: string;
-  ctaHref: string;
-  ctaLabel: string;
-}) {
-  return (
-    <div className="grid grid-cols-[160px,1fr] gap-6 rounded-2xl border border-white/10 bg-white/[0.04] p-5">
-      <div className="text-sm text-neutral-400">{left}</div>
-      <div>
-        <div className="flex flex-wrap items-center justify-between gap-3">
-          <div className="text-lg font-semibold">
-            {title} <span className="text-neutral-400 font-normal">· {org}</span>
-          </div>
-          <a
-            href={ctaHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-white/15 px-3 py-1.5 text-sm hover:bg-white/5"
-          >
-            <FileText size={16} /> {ctaLabel}
-          </a>
-        </div>
         <p className="mt-2 text-sm text-neutral-300">{body}</p>
       </div>
     </div>
