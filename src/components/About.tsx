@@ -8,19 +8,19 @@ import { ChevronDown } from "lucide-react";
 export default function About() {
   // Snapshot chips shown inline; full grouped list revealed on expand
   const SNAPSHOT = [
-    "Next.js",
     "React",
     "TypeScript",
-    "Node.js",
-    "Tailwind CSS",
-    "Firebase",
-    "MongoDB",
-    "Git/GitHub",
+    "Python",
+    "FastAPI",
+    "Java",
+    "SQL",
+    "PostgreSQL",
+    "Docker",
   ];
 
   // Keep these in sync with the grouped lists below for an accurate “+N more”
   const TOTAL_ITEMS =
-    4 /* FE */ + 3 /* BE */ + 4 /* Lang */ + 3 /* DevOps */ + 2 /* Data/Auth */;
+    4 /* FE */ + 4 /* BE */ + 4 /* Lang */ + 4 /* DevOps */ + 3 /* Data */;
   const remaining = Math.max(0, TOTAL_ITEMS - SNAPSHOT.length);
 
   const [stackOpen, setStackOpen] = useState(false);
@@ -83,11 +83,11 @@ export default function About() {
               ${stackOpen ? "max-h-[1200px] opacity-100 mt-4" : "max-h-0 opacity-0 mt-0"}`}
           >
             <div className="grid sm:grid-cols-2 gap-4">
-              <SkillGroup title="Frontend" items={["Next.js", "React", "Tailwind CSS", "shadcn/ui"]} />
-              <SkillGroup title="Backend" items={["Node.js", "Next.js API Routes", "REST"]} />
+              <SkillGroup title="Frontend" items={["React", "Next.js", "TypeScript", "Tailwind CSS"]} />
+              <SkillGroup title="Backend" items={["Python", "FastAPI", "Java", "REST APIs"]} />
               <SkillGroup title="Languages" items={["Python", "Java", "JavaScript", "TypeScript"]} />
-              <SkillGroup title="Tooling & DevOps" items={["Git/GitHub", "Vercel", "CI basics"]} />
-              <SkillGroup title="Data & Auth" items={["Firebase (Auth/Firestore/Storage)", "MongoDB"]} />
+              <SkillGroup title="Tooling & DevOps" items={["Git/GitHub", "Docker", "Azure", "Vercel"]} />
+              <SkillGroup title="Data" items={["SQL", "PostgreSQL", "Spark"]} />
             </div>
           </div>
         </div>
@@ -100,11 +100,11 @@ export default function About() {
             Currently I’m...
           </div>
           <ul className="mt-2 space-y-1 text-sm">
+            <li>• Working full time as a software developer</li>
             <li>• Building and shipping small projects</li>
             <li>• Creating custom websites for businesses</li>
-            <li>• Exploring ML + product ideas</li>
             <li className="flex flex-wrap items-center gap-2">
-              <span>• Researching and writing about tech, security, and society.</span>
+              <span>• Researching and writing about tech and security.</span>
               <a href="#blog" className="hidden md:inline underline hover:opacity-90" style={{ color: ACCENT }}>
                 View the research section
               </a>
@@ -120,7 +120,7 @@ export default function About() {
             Outside of work I’m...
           </div>
           <ul className="mt-2 space-y-1 text-sm list-disc list-inside">
-            <li>Gym & volleyball</li>
+            <li>Playing volleyball</li>
             <li>Reading & writing</li>
             <li>Gaming</li>
           </ul>
