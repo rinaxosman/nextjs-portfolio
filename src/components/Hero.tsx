@@ -65,7 +65,7 @@ export function Hero() {
             {/* bigger, crisp avatar */}
             <div className="relative h-40 w-40 sm:h-44 sm:w-44 lg:h-48 lg:w-48 rounded-full overflow-hidden ring-2 ring-white/10 mb-5">
               <Image
-                src="/portrait2.png"
+                src="/portrait.jpg"
                 alt="Rina Osman"
                 fill
                 priority
