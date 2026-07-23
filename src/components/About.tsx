@@ -30,8 +30,8 @@ export default function About() {
       {/* Left: bio + skills */}
       <div className="md:col-span-2 space-y-5 text-neutral-300">
         <p>
-          I’m Rina, a <span className="font-semibold text-white">Software Developer (Full-Stack & Data)</span> with interests in
-          cybersecurity and data analytics. I build end-to-end products—web apps, mobile apps and data flows.
+          I’m Rina, a full-time <span className="font-semibold text-white">Software Developer </span> building secure, user-focused applications
+  with React, TypeScript, Python, FastAPI, and SQL.
         </p>
         <p>
           I’ve completed internships across <span className="text-white font-medium">business analysis</span>,{" "}
