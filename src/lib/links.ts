@@ -5,6 +5,6 @@ export const LINKS = {
   github: "https://github.com/rinaxosman", // change to your github profile
   resume: "/rina-26-un.pdf", // PDF in /public
   substack: "https://rinaosman.substack.com/feed", // modify or remove
-  repo: "https://github.com/rinaxosman/nextjs-portfolio",
+  repo: "https://github.com/rinaxosman/portfolio-template",
   honoursReport: "/CSI4900-VulRepair.pdf"
 };
