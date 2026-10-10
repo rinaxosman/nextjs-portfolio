@@ -56,7 +56,7 @@ export function Hero() {
   };
 
   return (
-    <section id="home" className="relative overflow-hidden">
+    <section id="home" className="relative overflow-visible">
       <div className="mx-auto w-full max-w-[1130px] px-6 sm:px-8 lg:px-10 xl:px-6 py-20 md:py-28">
 
         <div className="grid md:grid-cols-2 items-center gap-y-10 sm:gap-y-12 md:gap-y-0">
@@ -131,13 +131,13 @@ export function Hero() {
                   ref={popRef}
                   role="menu"
                   className={[
-                    "hidden sm:block absolute -top-3 left-1/2 -translate-x-1/2",
+                    "hidden sm:block absolute bottom-full left-1/2 -translate-x-1/2 mb-3 z-50",
                     "rounded-xl border border-white/10 bg-neutral-900/95 backdrop-blur px-3 py-2",
                     "shadow-lg ring-1 ring-white/10 origin-bottom",
                     "transition-all duration-200 ease-out",
                     open
-                      ? "opacity-100 scale-100 -translate-y-[110%] pointer-events-auto"
-                      : "opacity-0 scale-95 -translate-y-[90%] pointer-events-none",
+                      ? "opacity-100 scale-100 translate-y-0 pointer-events-auto"
+                      : "opacity-0 scale-95 translate-y-1 pointer-events-none",
                   ].join(" ")}
                 >
                   <div className="flex items-center gap-2">
@@ -193,7 +193,7 @@ export function Hero() {
               I turn fuzzy ideas into shipped products.
             </p>
             <p className="mt-8 max-w-xl text-neutral-300">
-              I care about clean systems, clear UX, and measurable impact.
+              I specialize in full-stack development and AI engineering, building everything from intelligent agents and APIs to polished, user-centric applications.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">

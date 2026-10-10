@@ -1,48 +1,93 @@
 "use client";
 
 import { useState } from "react";
-import { Code2 } from "lucide-react";
+import { Code2, ChevronDown } from "lucide-react";
 import { ACCENT } from "@/lib/constants";
-import { ChevronDown } from "lucide-react";
 
-export default function About() {
-  // Snapshot chips shown inline; full grouped list revealed on expand
-  const SNAPSHOT = [
+// Organized technical skills
+const SKILLS = {
+  "AI & LLM Engineering": [
+    "AI Agents",
+    "Model Context Protocol (MCP)",
+    "LLM Integration",
+    "Prompt Engineering",
+  ],
+  "Frontend": [
     "React",
+    "Next.js",
     "TypeScript",
+    "Tailwind CSS",
+    "HTML/CSS",
+  ],
+  "Backend": [
     "Python",
     "FastAPI",
     "Java",
+    "REST APIs",
+    "OAuth 2.0",
+  ],
+  "Languages": [
+    "Python",
+    "Java",
+    "TypeScript",
+    "JavaScript",
     "SQL",
-    "PostgreSQL",
+  ],
+  "DevOps & Cloud": [
     "Docker",
-  ];
+    "Kubernetes",
+    "Helm",
+    "Azure",
+    "Git/GitHub",
+    "Vercel",
+  ],
+  "Databases & Data": [
+    "PostgreSQL",
+    "SQL",
+    "Apache Spark",
+  ],
+};
 
-  // Keep these in sync with the grouped lists below for an accurate “+N more”
-  const TOTAL_ITEMS =
-    4 /* FE */ + 4 /* BE */ + 4 /* Lang */ + 4 /* DevOps */ + 3 /* Data */;
-  const remaining = Math.max(0, TOTAL_ITEMS - SNAPSHOT.length);
+const SNAPSHOT = [
+  "Python",
+  "TypeScript",
+  "React",
+  "FastAPI",
+  "Java",
+  "MCP",
+  "Docker",
+  "Kubernetes",
+  "Azure",
+];
 
+const ALL_SKILLS = [...new Set(Object.values(SKILLS).flat())];
+const remaining = ALL_SKILLS.filter(
+  (skill) => !SNAPSHOT.includes(skill)
+).length;
+
+export default function About() {
   const [stackOpen, setStackOpen] = useState(false);
 
   return (
     <div className="grid md:grid-cols-3 gap-8 items-start">
       {/* Left: bio + skills */}
-      <div className="md:col-span-2 space-y-5 text-neutral-300">
+      <div className="md:col-span-2 min-w-0 space-y-5 text-neutral-300">
         <p>
-          I’m Rina, a full-time <span className="font-semibold text-white">Software Developer </span> building secure, user-focused applications
-  with React, TypeScript, Python, FastAPI, and SQL.
+          I’m Rina, a full-time <span className="font-semibold text-white">Software Developer</span> specializing in full-stack engineering, AI integration, and cloud-native applications using React, TypeScript, Python, Java, FastAPI, and PostgreSQL.
         </p>
         <p>
-          I’ve completed internships across <span className="text-white font-medium">business analysis</span>,{" "}
-          <span className="text-white font-medium">mobile app development</span>, and{" "}
-          <span className="text-white font-medium">software development</span>, which gave me a solid view of the full
-          product lifecycle from discovery to delivery.
+          My experience spans <span className="text-white font-medium">AI agents and MCP infrastructure</span>, <span className="text-white font-medium">backend engineering</span>, and <span className="text-white font-medium">UI development</span>, with a focus on delivering secure, scalable software from concept to deployment.
+        </p>
+        <p>
+          I’ve also completed internships across <span className="text-white font-medium">business analysis</span>, <span className="text-white font-medium">mobile app development</span>, and <span className="text-white font-medium">software development</span>, giving me a well-rounded understanding of the full product lifecycle from discovery to delivery.
         </p>
 
         {/* Snapshot row + toggle */}
         <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-          <div className="mb-2 text-sm font-semibold text-white">Tech stack</div>
+          <div className="mb-2 text-sm font-semibold text-white">
+            Tech stack
+          </div>
+
           <div className="flex flex-wrap gap-2">
             {SNAPSHOT.map((t) => (
               <span
@@ -55,60 +100,80 @@ export default function About() {
 
             {/* Toggle pill */}
             <button
-  type="button"
-  onClick={() => setStackOpen(v => !v)}
-  aria-expanded={stackOpen}
-  aria-controls="full-stack"
-  className="group inline-flex items-center gap-1.5 rounded-full border px-3.5 py-1 text-xs font-medium transition hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2"
-  style={{
-    borderColor: ACCENT,
-    color: ACCENT,
-    boxShadow: "inset 0 0 0 1px rgba(255,255,255,.08)"
-  }}
->
-  <span>{stackOpen ? "Hide full stack" : `Show full stack${remaining ? ` (+${remaining})` : ""}`}</span>
-  <ChevronDown
-    className={`h-3.5 w-3.5 transition-transform duration-300 ${stackOpen ? "rotate-180" : ""}`}
-    aria-hidden
-  />
-  
-</button>
-
+              type="button"
+              onClick={() => setStackOpen((v) => !v)}
+              aria-expanded={stackOpen}
+              aria-controls="full-stack"
+              className="group inline-flex items-center gap-1.5 rounded-full border px-3.5 py-1 text-xs font-medium transition hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2"
+              style={{
+                borderColor: ACCENT,
+                color: ACCENT,
+                boxShadow: "inset 0 0 0 1px rgba(255,255,255,.08)",
+              }}
+            >
+              <span>
+                {stackOpen
+                  ? "Hide full stack"
+                  : `Show full stack (+${remaining})`}
+              </span>
+              <ChevronDown
+                className={`h-3.5 w-3.5 transition-transform duration-300 ${
+                  stackOpen ? "rotate-180" : ""
+                }`}
+                aria-hidden
+              />
+            </button>
           </div>
 
           {/* Full grouped list (animated) */}
           <div
             id="full-stack"
-            className={`overflow-hidden transition-[max-height,opacity,margin] duration-400 ease-out
-              ${stackOpen ? "max-h-[1200px] opacity-100 mt-4" : "max-h-0 opacity-0 mt-0"}`}
+            className={`overflow-hidden transition-[max-height,opacity,margin] duration-300 ease-out ${
+              stackOpen
+                ? "max-h-[1600px] opacity-100 mt-4"
+                : "max-h-0 opacity-0 mt-0"
+            }`}
           >
-            <div className="grid sm:grid-cols-2 gap-4">
-              <SkillGroup title="Frontend" items={["React", "Next.js", "TypeScript", "Tailwind CSS"]} />
-              <SkillGroup title="Backend" items={["Python", "FastAPI", "Java", "REST APIs"]} />
-              <SkillGroup title="Languages" items={["Python", "Java", "JavaScript", "TypeScript"]} />
-              <SkillGroup title="Tooling & DevOps" items={["Git/GitHub", "Docker", "Azure", "Vercel"]} />
-              <SkillGroup title="Data" items={["SQL", "PostgreSQL", "Spark"]} />
+            <div className="grid sm:grid-cols-2 gap-x-6 gap-y-5">
+              {Object.entries(SKILLS).map(([title, items]) => (
+                <SkillGroup
+                  key={title}
+                  title={title}
+                  items={items}
+                />
+              ))}
             </div>
           </div>
         </div>
       </div>
 
       {/* Right: cards */}
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 min-w-0">
         <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-          <div className="text font-semibold" style={{ color: ACCENT }}>
+          <div
+            className="text font-semibold"
+            style={{ color: ACCENT }}
+          >
             Currently I’m...
           </div>
           <ul className="mt-2 space-y-1 text-sm">
-            <li>• Working full time as a software developer</li>
-            <li>• Building and shipping small projects</li>
+            <li>• Developing AI agents and MCP integrations</li>
+            <li>• Building full-stack applications</li>
             <li>• Creating custom websites for businesses</li>
             <li className="flex flex-wrap items-center gap-2">
               <span>• Researching and writing about tech and security.</span>
-              <a href="#blog" className="hidden md:inline underline hover:opacity-90" style={{ color: ACCENT }}>
+              <a
+                href="#blog"
+                className="hidden md:inline underline hover:opacity-90"
+                style={{ color: ACCENT }}
+              >
                 View the research section
               </a>
-              <a href="#blog" className="md:hidden underline hover:opacity-90" style={{ color: ACCENT }}>
+              <a
+                href="#blog"
+                className="md:hidden underline hover:opacity-90"
+                style={{ color: ACCENT }}
+              >
                 View the research topics below
               </a>
             </li>
@@ -116,7 +181,10 @@ export default function About() {
         </div>
 
         <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-          <div className="text font-semibold" style={{ color: ACCENT }}>
+          <div
+            className="text font-semibold"
+            style={{ color: ACCENT }}
+          >
             Outside of work I’m...
           </div>
           <ul className="mt-2 space-y-1 text-sm list-disc list-inside">
@@ -131,14 +199,26 @@ export default function About() {
 }
 
 /* Helpers */
-function SkillGroup({ title, items }: { title: string; items: string[] }) {
+function SkillGroup({
+  title,
+  items,
+}: {
+  title: string;
+  items: string[];
+}) {
   return (
     <div>
-      <div className="mb-2 text-sm font-semibold text-white">{title}</div>
+      <div className="mb-2 text-sm font-semibold text-white">
+        {title}
+      </div>
       <ul className="space-y-1">
         {items.map((t) => (
           <li key={t} className="flex items-center gap-2 text-sm">
-            <Code2 size={16} style={{ color: ACCENT }} />
+            <Code2
+              size={16}
+              className="shrink-0"
+              style={{ color: ACCENT }}
+            />
             <span>{t}</span>
           </li>
         ))}

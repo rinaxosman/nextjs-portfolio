@@ -31,7 +31,7 @@ export default function Page() {
       {/* Gutter wrapper */}
       <div className="mx-auto w-full max-w-6xl px-4 bp1130:px-0">
         <Hero />
-        <Section id="about" title="About me" subtitle="CS @ uOttawa • Software • Cyber • Data">
+        <Section id="about" title="About me" subtitle="Software Developer • Full-Stack Engineering • AI & Cybersecurity">
           <About />
         </Section>
         <Section id="projects" title="Projects" subtitle="Selected work I’m proud of.">
