@@ -1,6 +1,7 @@
+
 # Rina's Portfolio
 
-My personal portfolio website showcasing my experience in software development, AI engineering, and full-stack applications, along with my projects, technical skills, and professional background.
+My personal portfolio showcasing my experience in software development, AI engineering, and full-stack applications, along with my projects, technical skills, and professional background.
 
 🌐 **Live Website:** [rinaosman.com](https://www.rinaosman.com/)
 
@@ -33,8 +34,10 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 Want to build a similar website?
 
-I've created a separate, customizable version of this portfolio that you can use for your own projects.
+I've created a separate, customizable version of this portfolio that you can use to build your own.
 
 **[View the Portfolio Template on GitHub](https://github.com/rinaxosman/portfolio-template)**
 
-The template includes customizable content, project showcases, resume sections, and setup instructions to help you create your own portfolio.
+The template includes customizable content, project showcases, resume sections, and step-by-step setup instructions.
+
+You can customize it manually or use **GitHub Copilot to personalize the entire website using your resume**, with minimal coding required. The template's README includes a ready-to-use Copilot prompt to guide you through the process.
