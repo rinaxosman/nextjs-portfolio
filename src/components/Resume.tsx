@@ -30,7 +30,7 @@ export function Resume() {
           left="Jan 2026 – Present"
           title="Full-Time Software Developer"
           org="Government of Canada"
-          body="Develop secure web applications using React, TypeScript, Python, FastAPI, and SQL. Build frontend components, backend APIs, and database-integrated features."
+          body="Develop end-to-end LLM-powered AI agents and MCP servers, integrating enterprise APIs and automated workflows. Engineer full-stack applications and responsive UIs using React, TypeScript, FastAPI, and PostgreSQL. Deploy cloud-native services using Docker, Kubernetes, Helm, and Azure."
         />
 
         <ResumeItem
